@@ -46,7 +46,7 @@ body {
     cursor: pointer;
     user-select: none;
     /* shift down to optically centre the x-height rather than the full line box */
-    transform: translateY(0.15em);
+    transform: translateY(0.4em);
 }
 
 #mobile-menu-btn {
