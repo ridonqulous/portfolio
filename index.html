@@ -4,8 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Otto Rønnest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Coming soon! Very exciting...! \n jeg tror det virker</h1>
+
+    <header id="site-header">
+        <div id="site-name">otto rønnest</div>
+    </header>
+
+    <aside id="sidebar">
+        <nav id="main-nav">
+            <a class="nav-item" id="nav-about" href="#">ABOUT</a>
+            <a class="nav-item" id="nav-publications" href="#">SELECTED PUBLICATIONS</a>
+            <div class="nav-spacer"></div>
+            <div id="project-nav"></div>
+        </nav>
+    </aside>
+
+    <main id="content">
+
+        <div id="view-grid" class="view active">
+            <div id="project-grid"></div>
+        </div>
+
+        <div id="view-detail" class="view">
+            <div id="detail-nav-bar">
+                <button id="btn-prev" class="detail-arrow" aria-label="Previous project">←</button>
+                <button id="btn-next" class="detail-arrow" aria-label="Next project">→</button>
+            </div>
+            <div id="detail-content"></div>
+        </div>
+
+        <div id="view-about" class="view">
+            <div id="about-content" class="text-content"></div>
+        </div>
+
+        <div id="view-publications" class="view">
+            <div id="publications-content" class="text-content"></div>
+        </div>
+
+    </main>
+
+    <script src="projects/projects.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
