@@ -15,6 +15,10 @@ function setProjectHover(projectId, on) {
     document.querySelector(`.grid-cell[data-id="${projectId}"]`)?.classList.toggle('hover', on);
 }
 
+function closeMobileMenu() {
+    document.getElementById('mobile-menu').classList.remove('open');
+}
+
 async function openProject(index) {
     const project = projects[index];
     currentProjectIndex = index;
@@ -53,6 +57,7 @@ async function openProject(index) {
     document.getElementById('btn-next').disabled = index === projects.length - 1;
 
     showView('detail');
+    window.scrollTo(0, 0);
 }
 
 async function openStaticView(viewId) {
@@ -72,6 +77,7 @@ async function openStaticView(viewId) {
     }
 
     showView(viewId);
+    window.scrollTo(0, 0);
 }
 
 function buildSidebar() {
@@ -127,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     buildSidebar();
     buildGrid();
 
+    // Desktop nav
     document.getElementById('nav-about').addEventListener('click', e => {
         e.preventDefault();
         openStaticView('about');
@@ -148,5 +155,33 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('site-name').addEventListener('click', () => {
         clearActive();
         showView('grid');
+        window.scrollTo(0, 0);
+    });
+
+    // Mobile menu
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.add('open');
+    });
+
+    document.getElementById('mobile-menu-close').addEventListener('click', closeMobileMenu);
+
+    document.getElementById('mobile-nav-home').addEventListener('click', e => {
+        e.preventDefault();
+        closeMobileMenu();
+        clearActive();
+        showView('grid');
+        window.scrollTo(0, 0);
+    });
+
+    document.getElementById('mobile-nav-about').addEventListener('click', e => {
+        e.preventDefault();
+        closeMobileMenu();
+        openStaticView('about');
+    });
+
+    document.getElementById('mobile-nav-publications').addEventListener('click', e => {
+        e.preventDefault();
+        closeMobileMenu();
+        openStaticView('publications');
     });
 });

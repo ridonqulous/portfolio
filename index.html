@@ -13,6 +13,7 @@
 
     <header id="site-header">
         <div id="site-name">otto rønnest</div>
+        <button id="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
     </header>
 
     <aside id="sidebar">
@@ -47,6 +48,15 @@
         </div>
 
     </main>
+
+    <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <button id="mobile-menu-close" aria-label="Close menu">&#10005;</button>
+        <nav id="mobile-nav">
+            <a class="mobile-nav-item" id="mobile-nav-home" href="#">HOME</a>
+            <a class="mobile-nav-item" id="mobile-nav-about" href="#">ABOUT</a>
+            <a class="mobile-nav-item" id="mobile-nav-publications" href="#">SELECTED PUBLICATIONS</a>
+        </nav>
+    </div>
 
     <script src="projects/projects.js"></script>
     <script src="script.js"></script>
